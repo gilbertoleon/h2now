@@ -1,0 +1,239 @@
+:root {
+  font-family: "Omnes Regular", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.wrapper *,
+.wrapper *::before,
+.wrapper *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+.wrapper.loading {
+  height: 100px;
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.wrapper.loading:nth-child(2) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.wrapper.loading::after {
+  content: "";
+  background: url("../img/loader.svg");
+  background-color: transparent;
+  background-repeat: no-repeat no-repeat;
+  background-position: center center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+svg {
+  font-family: "Omnes Regular", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  display: block;
+}
+svg g.tick {
+  pointer-events: none;
+}
+svg path.line.invisible {
+  display: none;
+}
+svg rect.event.invisible {
+  display: none;
+}
+
+.wrapper.trace {
+  outline: 2px solid red;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.wrapper.trace[data-chart-type=coliforms] {
+  background-image: url(../img/02coliforms.png);
+  width: 1240px;
+  height: 383px;
+}
+.wrapper.trace[data-chart-type=tryptophan] {
+  background-image: url(../img/01tryptophan.png?ts=323234);
+  width: 1240px;
+  height: 701px;
+}
+.wrapper.trace[data-chart-type=temperature] {
+  background-image: url(../img/03temperatura.png);
+  width: 602px;
+  height: 343px;
+}
+.wrapper.trace[data-chart-type=turbidity] {
+  background-image: url(../img/04turbidity.png);
+  width: 605px;
+  height: 343px;
+}
+.wrapper.trace[data-chart-type=three-branches] {
+  background-image: url(../img/05triple.png);
+  width: 1240px;
+  height: 545px;
+}
+
+body {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  display: grid;
+  row-gap: 80px;
+  grid-template-columns: clamp(310px, 80%, 1920px);
+  justify-content: center;
+}
+body.loading {
+  row-gap: 10px;
+}
+
+.tooltip {
+  opacity: 0;
+  position: absolute;
+  top: -14px;
+  left: 0;
+  padding: 0.6em 1em;
+  background: #fff;
+  text-align: center;
+  line-height: 1.4em;
+  font-size: 0.9em;
+  border: 1px solid #ddd;
+  z-index: 10;
+  transition: all 0.1s ease-out;
+  pointer-events: none;
+}
+
+.tooltip:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border: 1px solid #ddd;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  transform: translate(-50%, 50%) rotate(45deg);
+  transform-origin: center center;
+  z-index: 10;
+}
+
+.tooltip.overflow:before {
+  content: none;
+}
+
+[data-tooltip-role=title] {
+  margin-bottom: 0.2em;
+  font-weight: 600;
+  font-size: 1.1em;
+  line-height: 1.4em;
+}
+
+.tooltip .branches {
+  text-align: left;
+}
+.tooltip .branches ul,
+.tooltip .branches ol {
+  margin-left: 0;
+  list-style: none;
+}
+.tooltip .branches .key {
+  font-weight: 700;
+}
+.tooltip .branches .key.north {
+  color: #00578a;
+}
+.tooltip .branches .key.south {
+  color: #11b3da;
+}
+.tooltip .branches .key.main {
+  color: #4a8e81;
+}
+
+div.form {
+  position: relative;
+  margin: 0 5px 0 0;
+  width: 100%;
+}
+div.form label {
+  font-size: 1.1rem !important;
+  font-family: omnes-pro, "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0em;
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  line-height: 1.8em;
+  font-size: 1.1rem;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 90%;
+  margin: 0;
+}
+
+#branch {
+  font-family: omnes-pro, "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  line-height: 1.8em;
+  font-size: 0.9rem;
+  width: 100%;
+  padding: 12px;
+  margin: 6px 0 4px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  color: #000;
+  font-size: 12px;
+  line-height: normal;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+:focus {
+  outline-color: #020202;
+  outline-width: 2px;
+  outline-style: solid;
+  outline-offset: 4px;
+}
+
+select:focus {
+  background: #fff;
+  transition: background 0.1s ease-in;
+}
+
+p.loading {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 0;
+}
+/*# sourceMappingURL=estilo.css.map */

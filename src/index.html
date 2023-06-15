@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>H2NOW</title>
+    <script src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    <!-- build:css -->
+    <link rel="stylesheet" href="css/estilo.css" />
+    <!-- endbuild -->
+    <!-- build:js -->
+    <script src="js/dependencias.min.js"></script>
+    <script src="js/aplicacion.js"></script>
+    <!-- endbuild -->
+  </head>
+
+  <body>
+    <div class="form">
+      <label for="branch"
+        >Select a branch:
+        <select id="branch">
+          <option value="north">North Branch</option>
+          <option value="south">South Branch</option>
+          <option value="main">Main Stem</option>
+        </select></label
+      >
+      <p class="loading">Data is loading</p>
+    </div>
+    <div class="wrapper" data-chart-type="coliforms">
+      <div class="tooltip">
+        <div data-tooltip-container="title">
+          <span data-tooltip-role="title"></span>
+        </div>
+        <div data-tooltip-container="value">
+          <span data-tooltip-role="value"></span>
+        </div>
+        <div data-tooltip-container="date">
+          <span data-tooltip-role="date"></span>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper" data-chart-type="tlf">
+      <div class="tooltip">
+        <div data-tooltip-container="title">
+          <span data-tooltip-role="title"></span>
+        </div>
+        <div data-tooltip-container="value">
+          <span data-tooltip-role="value"></span>
+        </div>
+        <div data-tooltip-container="date">
+          <span data-tooltip-role="date"></span>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper" data-chart-type="temperature">
+      <div class="tooltip">
+        <div data-tooltip-container="title">
+          <span data-tooltip-role="title"></span>
+        </div>
+        <div data-tooltip-container="value">
+          <span data-tooltip-role="value"></span>
+        </div>
+        <div data-tooltip-container="date">
+          <span data-tooltip-role="date"></span>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper" data-chart-type="turbidity">
+      <div class="tooltip">
+        <div data-tooltip-container="title">
+          <span data-tooltip-role="title"></span>
+        </div>
+        <div data-tooltip-container="value">
+          <span data-tooltip-role="value"></span>
+        </div>
+        <div data-tooltip-container="date">
+          <span data-tooltip-role="date"></span>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper" data-chart-type="spec_conductivity">
+      <div class="tooltip">
+        <div data-tooltip-container="title">
+          <span data-tooltip-role="title"></span>
+        </div>
+        <div data-tooltip-container="value">
+          <span data-tooltip-role="value"></span>
+        </div>
+        <div data-tooltip-container="date">
+          <span data-tooltip-role="date"></span>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper" data-chart-type="cdom">
+      <div class="tooltip">
+        <div data-tooltip-container="title">
+          <span data-tooltip-role="title"></span>
+        </div>
+        <div data-tooltip-container="value">
+          <span data-tooltip-role="value"></span>
+        </div>
+        <div data-tooltip-container="date">
+          <span data-tooltip-role="date"></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
